@@ -1,0 +1,12 @@
+version: "3"
+services:
+  chatgpt-tgbot:
+    image: shinyypig/chatgpt-tgbot:latest
+    container_name: chatgpt-bot
+    environment:
+        - OPENAI_KEY=Your OpenAI API Key
+        - TELEGRAM_KEY=Your Telegram Bot Token
+        - TELEGRAM_USER_ID=[Your Telegram User ID].
+        - SESSION_LIMIT=5 # The number of sessions to send to OpenAI.
+        - PYTHONUNBUFFERED=1 # See python print in docker logs.
+    restart: unless-stopped
